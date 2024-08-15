@@ -1,0 +1,19 @@
+(1) change the name and logo
+(2) change home page in a way by adding different components on the page so the explore menu option can be moved to the menu page
+(3) Improve footer
+(4) make the number and email a hyperlink
+
+
+on cart page add option to change quantity 
+make the x on cart page remove entire item instead of a single reduction 
+add an if statement to make the cart disapear and add make it explore menu
+
+
+in backend add better way to validate password
+
+add a burger menu in navigation for mobile view
+
+
+add a functionality that does not allowed to add anything in cart unless the user is logged in, if without login in the user try to add something in a cart the login popup shold be displayed
+
+add toast whenever a user login or sign in 
