@@ -58,7 +58,7 @@ const StoreContextProvider = (props) => {
       {},
       { headers: { token } }
     );
-    setCartItems(response.data.cartItems);
+    setCartItems(response.data.cartData);
   };
 
   useEffect(() => {
@@ -73,11 +73,11 @@ const StoreContextProvider = (props) => {
     loadData();
   }, []);
 
-  //   useEffect(() => {
-  //   if (token) {
-  //   loadCartData(token);
-  // }
-  //   }, [token]);
+    useEffect(() => {
+    if (token) {
+    loadCartData(token);
+  }
+    }, [token]);
 
   const contextValue = {
     food_list,
