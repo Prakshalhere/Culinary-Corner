@@ -8,6 +8,8 @@ import Verify from "./pages/Verify/Verify";
 import Footer from "./components/Footer/Footer";
 import LoginPopup from "./components/LoginPopup/LoginPopup";
 import MyOrders from "./pages/MyOrders/MyOrders";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; 
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -26,6 +28,7 @@ const App = () => {
         </Routes>
       </div>
       <Footer />
+      <ToastContainer position="top-right" autoClose={5000} />
     </>
   );
 };

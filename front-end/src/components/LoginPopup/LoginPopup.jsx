@@ -1,13 +1,13 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import "./LoginPopup.css";
 import { assets } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
-import axios from 'axios';
+import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const LoginPopup = ({ setShowLogin }) => {
-
-
-    const {url, setToken} = useContext(StoreContext); 
+  const { url, setToken } = useContext(StoreContext);
 
   const [currentState, setCurrentState] = useState("Login");
   const [data, setData] = useState({
@@ -22,28 +22,41 @@ const LoginPopup = ({ setShowLogin }) => {
     setData((data) => ({ ...data, [name]: value }));
   };
 
-  const onLogin = async (event) =>{
-        event.preventDefault()
-        let newUrl = url;
+  const onLogin = async (event) => {
+    event.preventDefault();
+    let newUrl = url;
 
-        if(currentState=== "Login"){
-            newUrl += "/api/user/login"
-        }
-        else{
-            newUrl += "/api/user/register"
-        }
+    if (currentState === "Login") {
+      newUrl += "/api/user/login";
+    } else {
+      newUrl += "/api/user/register";
+    }
 
-        const response = await axios.post(newUrl, data);
+    try {
+      const response = await axios.post(newUrl, data);
 
-        if(response.data.success){
-            setToken(response.data.token);
-            localStorage.setItem("token" , response.data.token);
-            setShowLogin(false)
-        }
-        else{
-            alert(response.data.message);
-        }
-  }
+      console.log("API Response:", response.data);
+
+      if (response.data.success) {
+
+        setToken(response.data.token);
+        localStorage.setItem("token", response.data.token);
+        console.log("Success toast triggered");
+        toast.success(
+          `${
+            currentState === "Login"
+              ? "Logged in successfully!"
+              : "Account created successfully!"
+          }`
+        );
+        setShowLogin(false);
+      } else {
+        toast.error(response.data.message);
+      }
+    } catch (error) {
+      toast.error("An error occurred. Please try again.");
+    }
+  };
 
   return (
     <div className="login-popup">
@@ -53,13 +66,11 @@ const LoginPopup = ({ setShowLogin }) => {
           <img
             onClick={() => setShowLogin(false)}
             src={assets.cross_icon}
-            alt=""
+            alt="Close"
           />
         </div>
         <div className="login-popup-inputs">
-          {currentState === "Login" ? (
-            <></>
-          ) : (
+          {currentState === "Sign up" && (
             <input
               name="name"
               onChange={onChangeHandler}
@@ -69,7 +80,6 @@ const LoginPopup = ({ setShowLogin }) => {
               required
             />
           )}
-
           <input
             name="email"
             onChange={onChangeHandler}
@@ -87,7 +97,9 @@ const LoginPopup = ({ setShowLogin }) => {
             required
           />
         </div>
-        <button type="submit">{currentState === "Login" ? "Login" : "Create account"}</button>
+        <button type="submit">
+          {currentState === "Login" ? "Login" : "Create account"}
+        </button>
         <div className="login-popup-condition">
           <input type="checkbox" required />
           <p>By continuing, I agree to the terms of use & privacy policy.</p>
@@ -95,12 +107,12 @@ const LoginPopup = ({ setShowLogin }) => {
         {currentState === "Login" ? (
           <p>
             Create a new account?{" "}
-            <span onClick={() => setCurrentState("Sign up")}>Click here</span>{" "}
+            <span onClick={() => setCurrentState("Sign up")}>Click here</span>
           </p>
         ) : (
           <p>
             Already have an account?{" "}
-            <span onClick={() => setCurrentState("Login")}>Login here</span>{" "}
+            <span onClick={() => setCurrentState("Login")}>Login here</span>
           </p>
         )}
       </form>
