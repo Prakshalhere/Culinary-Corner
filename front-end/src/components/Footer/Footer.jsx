@@ -1,43 +1,60 @@
-import React from 'react'
-import './Footer.css'
-import { assets } from '../../assets/assets'
+import React from "react";
+import "./Footer.css";
+import { assets } from "../../assets/assets";
 
 const Footer = () => {
   return (
-    <div className='footer'>
-        <div className="footer-content">
-            <div className="footer-content-left">
-                <img src={assets.logo} alt="" />
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque veritatis dolor dignissimos natus cumque odio culpa at, eveniet accusamus maxime similique esse non facilis totam laudantium labore fugit harum dolorum.</p>
-                <div className="footer-social-icons">
-                    <img src={assets.facebook_icon} alt="" />
-                    <img src={assets.twitter_icon} alt="" />
-                    <img src={assets.linkedin_icon} alt="" />
-                </div>
-            </div>
-            <div className="footer-content-center">
-                <h2>Company</h2>
-                <ul>
-                    <li>Home</li>
-                    <li>About us</li>
-                    <li>Delivery</li>
-                    <li>Privacy Policy</li>
-                </ul>
-            </div>
-            <div className="footer-content-right">
-                <h2>GET IN TOUCH</h2>
-                <ul>
-                    <li>+1-111-222-3333</li>
-                    <li>contact@tomato.com</li>
-                </ul>
-            </div>
+    <div className="footer">
+      <div className="footer-content">
+        <div className="footer-content-left">
+          <img src={assets.logo_footer} alt="" />
+          <div className="footer-social-icons">
+            <img src={assets.facebook_icon} alt="" />
+            <img src={assets.twitter_icon} alt="" />
+            <img src={assets.linkedin_icon} alt="" />
+          </div>
         </div>
-        <hr/>
-        <p className="footer-copyright">
-            Copyright 2024 © Tomato.com - All Right Reserved.
-        </p>
-    </div>
-  )
-}
+        <div className="footer-content-center">
+          <h2>Company</h2>
+          <ul>
+            <li>Home</li>
+            <li>About us</li>
+            <li>Delivery</li>
+            <li>Privacy Policy</li>
+          </ul>
+        </div>
+        <div className="footer-content-right">
+          <h2>GET IN TOUCH</h2>
+          <ul>
+            <li>
+              <a href="tel:+1112223333">+1-111-222-3333</a>
+            </li>
+            <li>
+              <a href="mailto:contact@CulinaryCorner.com">
+                contact@CulinaryCorner.com
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <hr />
 
-export default Footer
+      <div className="footer-talk-to-creator">
+        <h2>Interested in Collaborating?</h2>
+        <p>
+          Let’s connect! Reach out to discuss potential opportunities or
+          collaborations.
+        </p>
+        {/* change the href with the portfolio's contact page link */}
+        <a href="/contact" className="contact-button">
+          Contact Me
+        </a>
+      </div>
+      <p className="footer-copyright">
+        Copyright 2024 © CulinaryCorner.com - All Right Reserved.
+      </p>
+    </div>
+  );
+};
+
+export default Footer;

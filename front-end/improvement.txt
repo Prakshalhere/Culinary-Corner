@@ -1,9 +1,12 @@
-(1) change the name and logo
-(2) change home page in a way by adding different components on the page so the explore menu option can be moved to the menu page
-(3) Improve footer
-(4) make the number and email a hyperlink
+1 change the name and logo -- done
+2 Improve footer -- done
+3 make the number and email a hyperlink -- done
 
 
+
+
+ change home page in a way by adding different components on the page so the explore menu option can be moved to the menu page
+ 
 on cart page add option to change quantity 
 make the x on cart page remove entire item instead of a single reduction 
 add an if statement to make the cart disapear and add make it explore menu
@@ -16,4 +19,4 @@ add a burger menu in navigation for mobile view
 
 add a functionality that does not allowed to add anything in cart unless the user is logged in, if without login in the user try to add something in a cart the login popup shold be displayed
 
-add toast whenever a user login or sign in 
+add toast whenever a user login or sign in and when user try to clean on app link show a toast saying yet to be implemented

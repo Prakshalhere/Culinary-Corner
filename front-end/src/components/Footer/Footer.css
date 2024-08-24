@@ -10,6 +10,10 @@
     margin-top: 100px;
 }
 
+.footer-content-left img{
+    width: 280px;
+}
+
 .footer-content{
     width: 100%;
     display: grid;
@@ -20,7 +24,8 @@
 .footer-content-left, .footer-content-center, .footer-content-right{
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -56,3 +61,29 @@
         text-align: center;
     }
 }
+.footer-talk-to-creator {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.footer-talk-to-creator h2 {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.footer-talk-to-creator p {
+    color: #d9d9d9;
+    margin-bottom: 15px;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color:   tomato;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
