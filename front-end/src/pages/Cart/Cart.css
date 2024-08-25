@@ -98,6 +98,35 @@
     border-radius: 4px;
 }
 
+.empty-cart {
+    text-align: center;
+    margin-top: 50px;
+    color: #555;
+  }
+  
+  .empty-cart p {
+    font-size: 25px;
+    margin: 10px 0;
+
+  }
+  
+  .explore-menu-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: tomato;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .explore-menu-button:hover {
+    background-color: #ff6347;
+  }
+  
+
 @media (max-width:750px){
     .cart-bottom{
         flex-direction: column-reverse;

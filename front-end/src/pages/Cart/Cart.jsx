@@ -7,7 +7,18 @@ const Cart = () => {
   const { cartItems, food_list, removeFromCart, getTotalCartAmount, url } = useContext(StoreContext);
   const navigate = useNavigate();
 
-
+  if(!cartItems || Object.keys(cartItems).length === 0 || getTotalCartAmount() === 0 ){
+    return (
+      <div className="empty-cart">
+        <p>Your cart is feeling a little light!</p>
+        <p>Browse our delicious menu and add items to your cart.</p>
+        <button onClick={() => navigate('/')} className="explore-menu-button">
+          Explore Menu
+        </button>
+      </div>
+    );
+  }
+  
   return (
     <div className="cart">
       <div className="cart-items">
@@ -37,6 +48,7 @@ const Cart = () => {
               </div>
             );
           }
+          return null;
         })}
       </div>
       <div className="cart-bottom">
