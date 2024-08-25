@@ -126,6 +126,22 @@
     background-color: #ff6347;
   }
   
+  .cart-item-counter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .cart-item-counter img {
+    cursor: pointer;
+    width: 25px;
+  }
+  
+  .cart-item-counter p {
+    margin: 0;
+    font-size: 16px;
+  }
+  
 
 @media (max-width:750px){
     .cart-bottom{
