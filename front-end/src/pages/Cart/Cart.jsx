@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { assets } from "../../assets/assets";
 
 const Cart = () => {
-  const { cartItems, food_list, removeFromCart, addToCart, getTotalCartAmount, url } = useContext(StoreContext);
+  const { cartItems, food_list, removeFromCart, addToCart, getTotalCartAmount, url, removeItemFromCart } = useContext(StoreContext);
   const navigate = useNavigate();
 
   if (!cartItems || Object.keys(cartItems).length === 0 || getTotalCartAmount() === 0) {
@@ -55,7 +55,7 @@ const Cart = () => {
                     />
                   </div>
                   <p>${item.price * cartItems[item._id]}</p>
-                  <p onClick={() => removeFromCart(item._id)} className="cross">x</p>
+                  <p onClick={() => removeItemFromCart(item._id)} className="cross">x</p>
                 </div>
                 <hr />
               </div>

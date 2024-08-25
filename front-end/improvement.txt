@@ -5,13 +5,17 @@
 5 add an if statement to make the cart disapear and add make it explore menu -- done
 6 add a functionality that does not allowed to add anything in cart unless the user is logged in, if without login in the user try to add something in a cart the login popup shold be displayed
 7 on cart page add option to change quantity 
+8 make the x on cart page remove entire item instead of a single reduction 
+
 
 
 change home page in a way by adding different components on the page so the explore menu option can be moved to the menu page
  
 
 
-make the x on cart page remove entire item instead of a single reduction 
+
+
+Add option to add tip, tax.
 
 
 
