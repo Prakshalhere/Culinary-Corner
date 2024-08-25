@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./LoginPopup.css";
 import { assets } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
@@ -6,8 +6,8 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const LoginPopup = ({ setShowLogin }) => {
-  const { url, setToken } = useContext(StoreContext);
+const LoginPopup = () => {
+  const { url, setToken, setShowLogin } = useContext(StoreContext);
 
   const [currentState, setCurrentState] = useState("Login");
   const [data, setData] = useState({
@@ -38,7 +38,6 @@ const LoginPopup = ({ setShowLogin }) => {
       console.log("API Response:", response.data);
 
       if (response.data.success) {
-
         setToken(response.data.token);
         localStorage.setItem("token", response.data.token);
         console.log("Success toast triggered");
@@ -57,6 +56,14 @@ const LoginPopup = ({ setShowLogin }) => {
       toast.error("An error occurred. Please try again.");
     }
   };
+
+  // Disable scrolling on body when popup is open
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
 
   return (
     <div className="login-popup">

@@ -2,11 +2,12 @@
 2 Improve footer -- done
 3 make the number and email a hyperlink -- done
 4 add toast whenever a user login or sign in and when user try to clean on app link show a toast saying yet to be implemented -- done
-5 add an if statement to make the cart disapear and add make it explore menu
+5 add an if statement to make the cart disapear and add make it explore menu -- done
 
 
 change home page in a way by adding different components on the page so the explore menu option can be moved to the menu page
  
+
 on cart page add option to change quantity 
 make the x on cart page remove entire item instead of a single reduction 
 
