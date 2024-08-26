@@ -61,6 +61,9 @@ import logout_icon from './logout_icon.png'
 import parcel_icon from './parcel_icon.png'
 import logo_main from './logo_main.png'
 import logo_footer from './logo_footer.png'
+import home_icon from './home-icon.svg'
+import discount_icon from './discount-icon.svg'
+import time_icon from './time-icon.svg'
 
 export const assets = {
     logo,
@@ -83,7 +86,10 @@ export const assets = {
     bag_icon,
     parcel_icon,
     logo_main,
-    logo_footer
+    logo_footer,
+    time_icon,
+    home_icon,
+    discount_icon
 }
 
 export const menu_list = [

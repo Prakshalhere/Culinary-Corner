@@ -6,7 +6,7 @@
 6 add a functionality that does not allowed to add anything in cart unless the user is logged in, if without login in the user try to add something in a cart the login popup shold be displayed
 7 on cart page add option to change quantity 
 8 make the x on cart page remove entire item instead of a single reduction 
-
+9 when creating the menu page remember to send the explore menu of cart to menu page 
 
 
 change home page in a way by adding different components on the page so the explore menu option can be moved to the menu page
@@ -26,4 +26,3 @@ add a burger menu in navigation for mobile view
 
 
 
-when creating the menu page remember to send the explore menu of cart to menu page 
