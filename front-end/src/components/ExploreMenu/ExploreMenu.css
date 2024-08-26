@@ -9,8 +9,9 @@
 }
 
 .explore-menu-text{
-    max-width: 60%;
+    max-width: 70%;
     columns: #808080;
+    font-size: 20px;
 }
 
 .explore-menu-list{

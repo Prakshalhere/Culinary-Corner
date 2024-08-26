@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./Cart.css";
 import { StoreContext } from "../../context/StoreContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { assets } from "../../assets/assets";
 
 const Cart = () => {
@@ -13,9 +13,9 @@ const Cart = () => {
       <div className="empty-cart">
         <p>Your cart is feeling a little light!</p>
         <p>Browse our delicious menu and add items to your cart.</p>
-        <button onClick={() => navigate('/')} className="explore-menu-button">
+        <Link to="/menu"><button className="explore-menu-button">
           Explore Menu
-        </button>
+        </button></Link>
       </div>
     );
   }

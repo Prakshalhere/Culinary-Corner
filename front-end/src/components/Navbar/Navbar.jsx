@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import { assets } from "../../assets/assets";
-import {Link, useNavigate} from "react-router-dom"
+import {Link, useNavigate, useLocation} from "react-router-dom"
 import { useContext } from "react";
 import { StoreContext } from "../../context/StoreContext";
 import { toast } from 'react-toastify';
@@ -14,6 +14,15 @@ const Navbar = ({setShowLogin}) => {
     const [menu,setMenu] = useState("home");
     const {getTotalCartAmount, token, setToken } = useContext(StoreContext);
     const navigate = useNavigate (); 
+    const location = useLocation();
+
+    useEffect(() => {
+      if (location.pathname.includes("/menu")) {
+        setMenu("menu");
+      } else if (location.pathname === "/") {
+        setMenu("home");}
+    }, [location.pathname]);
+  
 
     const logout = () =>{
         localStorage.removeItem("token");
@@ -26,13 +35,13 @@ const Navbar = ({setShowLogin}) => {
     <div className="navbar">
      <Link to="/"> <img src={assets.logo_main} alt="" className="logo" /> </Link>
         <ul className="nav-menu">
-          <li onClick={()=>setMenu("home")} className={menu==="home"?"active":""}>home</li>
-          <li onClick={()=>setMenu("menu")} className={menu==="menu"?"active":""}>menu</li>
+          <li onClick={()=>setMenu("home")} className={menu==="home"?"active":""}><Link to="/"> home</Link></li>
+          <li onClick={()=>setMenu("menu")} className={menu==="menu"?"active":""}><Link to="/menu"> menu</Link></li>
           <li onClick={()=>setMenu("mobile-app")} className={menu==="mobile-app"?"active":""}>mobile-app</li>
           <li onClick={()=>setMenu("contact-us")} className={menu==="contact-us"?"active":""}>contact-us</li>
         </ul>
       <div className="nav-right">
-        <img src={assets.search_icon} alt="" />
+       {menu === "menu" ? <img src={assets.search_icon} alt="" /> : ""} 
         <div className="basket">
         <Link to="/cart"><img src={assets.basket_icon} alt="" /></Link>
         <div className={getTotalCartAmount()===0 ?"" : "dot"}></div>
