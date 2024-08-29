@@ -21,6 +21,9 @@ const Navbar = ({setShowLogin}) => {
         setMenu("menu");
       } else if (location.pathname === "/") {
         setMenu("home");}
+        else{
+          setMenu("")
+        }
     }, [location.pathname]);
   
 
