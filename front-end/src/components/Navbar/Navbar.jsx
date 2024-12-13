@@ -40,11 +40,10 @@ const Navbar = ({setShowLogin}) => {
         <ul className="nav-menu">
           <li onClick={()=>setMenu("home")} className={menu==="home"?"active":""}><Link to="/"> home</Link></li>
           <li onClick={()=>setMenu("menu")} className={menu==="menu"?"active":""}><Link to="/menu"> menu</Link></li>
-          <li onClick={()=>setMenu("mobile-app")} className={menu==="mobile-app"?"active":""}>mobile-app</li>
-          <li onClick={()=>setMenu("contact-us")} className={menu==="contact-us"?"active":""}>contact-us</li>
+  
         </ul>
       <div className="nav-right">
-       {menu === "menu" ? <img src={assets.search_icon} alt="" /> : ""} 
+       {/* {menu === "menu" ? <img src={assets.search_icon} alt="" /> : ""}  */}
         <div className="basket">
         <Link to="/cart"><img src={assets.basket_icon} alt="" /></Link>
         <div className={getTotalCartAmount()===0 ?"" : "dot"}></div>

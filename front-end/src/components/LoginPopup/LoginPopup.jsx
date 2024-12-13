@@ -122,7 +122,9 @@ const LoginPopup = () => {
             <span onClick={() => setCurrentState("Login")}>Login here</span>
           </p>
         )}
+        {currentState === "Login"? ( <p>Email: test@gmail.com, Password: test1234</p> ) : null}
       </form>
+      
     </div>
   );
 };
