@@ -14,7 +14,7 @@ const Footer = () => {
             <img src={assets.linkedin_icon} alt="" />
           </div>
         </div>
-        <div className="footer-content-center">
+        {/* <div className="footer-content-center">
           <h2>Company</h2>
           <ul>
             <li>Home</li>
@@ -22,7 +22,7 @@ const Footer = () => {
             <li>Delivery</li>
             <li>Privacy Policy</li>
           </ul>
-        </div>
+        </div> */}
         <div className="footer-content-right">
           <h2>GET IN TOUCH</h2>
           <ul>
@@ -45,8 +45,12 @@ const Footer = () => {
           Let’s connect! Reach out to discuss potential opportunities or
           collaborations.
         </p>
-        {/* change the href with the portfolio's contact page link */}
-        <a href="/contact" className="contact-button">
+        <a
+          href="https://prakshaljain.github.io"
+          className="contact-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Contact Me
         </a>
       </div>
