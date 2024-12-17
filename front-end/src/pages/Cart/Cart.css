@@ -2,6 +2,13 @@
     margin-top: 100px;
 }
 
+/* .cart-items{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+} */
+
+
 .cart-items-title{
     display: grid;
     grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
@@ -34,6 +41,9 @@
     display: flex;
     justify-content: space-between;
     gap: max(12vw,20px);
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .cart-total{
