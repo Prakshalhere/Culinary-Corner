@@ -46,7 +46,7 @@ const Footer = () => {
           collaborations.
         </p>
         <a
-          href="https://prakshaljain.github.io"
+          href="https://prakshaljain.onrender.com"
           className="contact-button"
           target="_blank"
           rel="noopener noreferrer"
